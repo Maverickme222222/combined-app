@@ -8,7 +8,7 @@ metadata:
 spec:
   project: production
   source:
-    path: production/argo-rollouts/base
+    path: argo-rollouts/base
     repoURL: https://github.com/Maverickme222222/combined-app
     targetRevision: HEAD
   destination:
