@@ -11,16 +11,16 @@ spec:
     path: charts/argo-workflows
     repoURL: https://github.com/argoproj/argo-helm.git
     targetRevision: HEAD
-    helm:
-      values: |
-        server: 
-          ingress:
-            hosts:
-              - acme.com
-            enabled: true
-            ingressClassName: nginx
-        controller:
-          containerRuntimeExecutor: emissary
+    # helm:
+    #   values: |
+    #     server: 
+    #       ingress:
+    #         hosts:
+    #           - acme.com
+    #         enabled: true
+    #         ingressClassName: nginx
+    #     controller:
+    #       containerRuntimeExecutor: emissary
   destination:
     namespace: argo
     server: https://kubernetes.default.svc
