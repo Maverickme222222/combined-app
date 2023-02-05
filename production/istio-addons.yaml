@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: istio
+  name: istio-addons
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: production
   source:
-    path: manifests/charts/istio-control/istio-discovery
-    repoURL: https://github.com/istio/istio.git
+    path: istio-addons/addons
+    repoURL: https://github.com/Maverickme222222/combined-app
     targetRevision: HEAD
   destination:
     namespace: istio-system
@@ -18,10 +18,4 @@ spec:
     automated:
       selfHeal: true
       prune: true
-    syncOptions:
-    - CreateNamespace=true
-  ignoreDifferences:
-  - group: admissionregistration.k8s.io
-    kind: MutatingWebhookConfiguration
-    jsonPointers:
-    - /webhooks
+
